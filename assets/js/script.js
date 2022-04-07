@@ -1,5 +1,5 @@
-var getUserRepos = function() {
-   console.log("function was called");
+var getRecipes = function() {
+   ("https//.thecocktaildb.com/api/json/v1/1/");
 };
 
-getUserRepos();
+getRecipes();
