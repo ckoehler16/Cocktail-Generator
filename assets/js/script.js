@@ -10,3 +10,10 @@ fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_mi
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+document.addEventListener('DOMContentLoaded', function () {
+	var elems = document.querySelectorAll('select');
+	var instances = M.FormSelect.init(elems, options);
+});
+var instance = M.FormSelect.getInstance(elem);
+
