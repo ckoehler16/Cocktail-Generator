@@ -11,27 +11,55 @@
 
 <body>
   <header class="hero">
-    <h1 class="app-title"><i
-        class="fa-solid fa-martini-glass-citrus"></i> Drinkology</h1>
+    <h1 class="app-title"><i class="fa-solid fa-martini-glass-citrus"></i> Drinkology</h1>
     <p>Search for drink recipes. Choose one ingredient from the pulldown menu or search using a
       keyword.
     </p>
   </header>
 
   <main>
-    <div id="liquor" class="input-field col s12">
-      <select>
-        <option value="" disabled selected>Choose your Liquor</option>
-        <option value="1">Vodka</option>
-        <option value="2">Tequila</option>
-        <option value="3">Rum</option>
-        <option value="3">Gin</option>
-        <option value="3">Whiskey</option>
-      </select>
-      <label>Get A Cocktail Recipe</label>
+    <div class="row">
+      <div class="col s12 m6">
+        <div id="liquor" class="input-field col s12">
+          <h5>Get A Cocktail Recipe</h5>
+          <select>
+            <option value="" disabled selected>Choose your Liquor</option>
+            <option value="1">Vodka</option>
+            <option value="2">Tequila</option>
+            <option value="3">Rum</option>
+            <option value="3">Gin</option>
+            <option value="3">Whiskey</option>
+          </select>
+        </div>
+        <a class="waves-effect waves-light btn">Submit</a>
+      </div>
+      <div class="col s12 m6">
+        <div class="matchCocktailside">
+          <h5>Find a recipe to go with your cocktail!</h5>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                  <label for="textarea1">Enter a type of dish.</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <a class="waves-effect waves-light btn">Search</a>
+      </div>
     </div>
-   
+    <div class="row">
+      <div class="col s12 m6">
+        <p>This is where the API generated cocktail recipe will display.</p>
+      </div>
+      <div class="col s12 m6">
+        <p>This is where the API generaged food recipe will display.</p>
+      </div>
+    </div>
   </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="./assets/js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
