@@ -37,14 +37,17 @@
         <div class="matchCocktailside">
           <h5>Find a recipe to go with your cocktail!</h5>
           <div class="row">
-            
-              <div class="row col s12">
-                <div class="input-field col s12">
-                  <input name="ingredientInput" id="username" type="text" class="input" />
-                  <button type="submit" class="btn">Search for dish</button>
-                  <label for="textarea1">Enter ingredient</label>
-                </div>
-              </div>
+            <h5>Search for an Ingredient </h5>
+                
+                  <input name="ingredientInput" 
+                  id="ingredientInput" 
+                  type="text" 
+                  autofocus="true" 
+                  placeholder="Enter an ingredient"/>
+                  <input type="submit" value="Submit" class="button" />
+                  
+                
+              
             
           </div>
         </div>
@@ -56,6 +59,7 @@
       </div>
       <div class="col s12 m6">
         <p>This is where the API generaged food recipe will display.</p>
+        <div id = recipeContainer></div>
       </div>
     </div>
   </main>
