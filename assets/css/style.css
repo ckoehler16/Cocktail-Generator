@@ -1,10 +1,10 @@
 .hero {
    padding: 3% 4%;
-   background-color: #26bf4f;
+   /* background-color: #26bf4f; */
  }
  
  .hero p {
-   color: #4d5750;
+   /* color: #4d5750; */
    font-size: 25px;
    display: inline;
    padding-left: 10px;
@@ -12,10 +12,14 @@
 
  .app-title {
    font-size: 3rem;
-   background-color: #ccdad1;
-   color: #0c7a2a;
+   /* background-color: #ccdad1; */
+   /* color: #0c7a2a; */
    padding: 10px;
    display: inline-block;
    border-radius: 3rem;
    box-shadow: 6px 5px;
  }
+
+ /* .matchCocktailside {
+   margin-top: 1rem;
+ } */
