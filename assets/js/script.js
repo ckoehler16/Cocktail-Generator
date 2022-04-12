@@ -25,7 +25,11 @@ button.addEventListener("click", function () {
     },
   };
   fetch(
-    "https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=" +
+    // Fetch recipes from endpoint
+    // Use From param - start point
+    // Use Size param - amount of recipes
+    // Use Tags param - recipe tag(s)
+    "https://tasty.p.rapidapi.com/recipes/list?from=0&size=10&tags=" +
       ingredientInput,
     options
   ).then(function (response) {
@@ -33,7 +37,22 @@ button.addEventListener("click", function () {
       console.log(response);
       response.json().then(function (data) {
         console.log(data);
+        // Returns result of recipes from /list endpoint
+
+        // Store results as recipes
+        var recipes = data.results;
+
+        // Initialize empty string for our html
+        var innerHtml = ``;
+
+        // We fetched 10 (size) recipes, loop through and grab inenr data
+        recipes.forEach((recipe) => {
+          innerHtml += `
+        <a href="https://tasty.co/recipe/${recipe.slug}">${recipe.name}</a>
+          `;
+        });
         var recipeLink = document.getElementById("recipeContainer");
+        recipeLink.innerHTML = innerHtml;
       });
     } else {
       alert("Error Please enter a different ingredient");
