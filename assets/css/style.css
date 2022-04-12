@@ -16,10 +16,12 @@
    /* color: #0c7a2a; */
    padding: 10px;
    display: inline-block;
-   border-radius: 3rem;
-   box-shadow: 6px 5px;
+   /* border-radius: 3rem;
+   box-shadow: 6px 5px; */
+   text-align: center;
  }
 
- /* .matchCocktailside {
-   margin-top: 1rem;
- } */
+ .brand-image {
+   width: 82px;
+   height: 112px;
+ }
