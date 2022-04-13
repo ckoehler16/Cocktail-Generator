@@ -15,6 +15,7 @@ var apiKey = "717fd2ea79msh05cd2674261c989p10bbf5jsnc8072009ac5c";
 //   // function to fetch the recipe
 // };
 
+
 button.addEventListener("click", function () {
   var ingredientInput = ingredientInputEl.value.trim();
   var options = {

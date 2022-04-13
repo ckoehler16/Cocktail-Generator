@@ -25,3 +25,7 @@
    width: 82px;
    height: 112px;
  }
+
+ select {
+   display: block;
+ }
