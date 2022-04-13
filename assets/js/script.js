@@ -53,9 +53,11 @@ button.addEventListener("click", function () {
         });
         var recipeLink = document.getElementById("recipeContainer");
         recipeLink.innerHTML = innerHtml;
+        if (recipes.length === 0) {
+          recipeContainerEl.textContent = "No recipes found.";
+          return;
+        }
       });
-    } else {
-      alert("Error Please enter a different ingredient");
     }
   });
 
