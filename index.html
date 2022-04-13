@@ -17,7 +17,7 @@
         Flute<br>and<br>Fork
       </h1>
 
-      <p>Search for drink recipes. Choose one ingredient from the pulldown menu or search using a
+      <p >Search for drink recipes. Choose one ingredient from the pulldown menu or search using a
         keyword.
       </p>
     </div>
@@ -28,7 +28,7 @@
       <div class="col s12 m6">
         <div id="liquor" class="input-field col s12">
           <h5>Get A Cocktail Recipe</h5>
-          <select class="liqour-selection">
+          <select id="cocktailIngredient" class="liqour-selection">
             <option value="" disabled selected>Choose your Liquor</option>
             <option value="1">Vodka</option>
             <option value="2">Tequila</option>
@@ -49,7 +49,7 @@
                   type="text" 
                   autofocus="true" 
                   placeholder="Enter an ingredient"/>
-                  <input type="submit" value="Submit" class="button" />
+                  <input type="submit" value="Click here to search for recipes" class="button waves-effect waves-red btn-medium scale-transition scale-in" />
                   
                 
               
@@ -62,6 +62,9 @@
       <div class="col s12 m6">
         <p>This is where the API generated cocktail recipe will display.</p>
       </div>
+      <!-- Modal Trigger -->
+
+
       <div class="col s12 m6">
         <p>This is where the API generated food recipe will display.</p>
         <div id = recipeContainer></div>

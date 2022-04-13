@@ -47,8 +47,8 @@ button.addEventListener("click", function () {
 
         // We fetched 10 (size) recipes, loop through and grab inenr data
         recipes.forEach((recipe) => {
-          innerHtml += `
-        <a href="https://tasty.co/recipe/${recipe.slug}">${recipe.name}</a>
+          innerHtml += `<ul>
+        <a class=waves-effect waves-light btn-large href="https://tasty.co/recipe/${recipe.slug}">${recipe.name}</a></ul>
           `;
         });
         var recipeLink = document.getElementById("recipeContainer");
