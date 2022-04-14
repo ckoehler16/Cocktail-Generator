@@ -1,13 +1,19 @@
+body {
+  background-color: #00cfc9;
+  font-family: 'Della Respira';
+}
+
 .hero {
-  padding: 3% 4%;
-  /* background-color: #26bf4f; */
+  padding: 0 4%;
+  background-color: #b2f7f5;
 }
 
 .hero p {
   /* color: #4d5750; */
-  font-size: 25px;
+  font-size: 30px;
   display: inline;
-  padding-left: 10px;
+  padding-left: 50px;
+  text-align: center;
 }
 
 .app-title {
@@ -25,6 +31,44 @@
   width: 82px;
   height: 112px;
 }
-ul {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+.font-title {
+  font-family: 'Syncopate';
 }
+
+.and {
+  font-family: 'Caveat';
+}
+
+.cocktail-container h5, p {
+  padding-left: 0.75rem;
+}
+
+.submit-btn {
+  padding-left: 0.75rem;
+}
+
+.cocktail-return {
+  padding-left: 1.5rem;
+}
+
+.search-space {
+  height: 2.75rem;
+  width: 90%;
+  background-color: #b2f7f5;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 14px;
+  margin-top: 16px;
+  box-sizing: content-box;
+  transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+  transition-property: box-shadow, border, -webkit-box-shadow;
+  transition-duration: 0.3s, 0.3s, 0.3s;
+  transition-timing-function: ease, ease, ease;
+  transition-delay: 0s, 0s, 0s;
+}
+
+::placeholder {
+  color: rgb(111, 108, 108);
+ }

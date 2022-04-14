@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Syncopate|Caveat|Della Respira:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="https://kit.fontawesome.com/91a4da6089.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./assets/css/style.css" />
@@ -14,20 +14,20 @@
     <div class="image-and-name">
       <img class="brand-image" src="./assets/images/flute-fork.png">
       <h1 class="app-title">
-        Flute<br>and<br>Fork
+        <span class="font-title">Flute</span><br><span class="and">and</span><br><span class="font-title">Fork</span>
       </h1>
 
-      <p >Search for drink recipes. Choose one ingredient from the pulldown menu or search using a
-        keyword.
+      <p class="text-center">Meal planning made simple!
       </p>
     </div>
   </header>
 
   <main>
     <div class="row">
-      <div class="col s12 m6">
+      <div class="cocktail-container col s12 m6">
+        <h5>Find a cocktail recipe</h5>
         <div id="liquor" class="input-field col s12">
-          <h5>Get A Cocktail Recipe</h5>
+          
           <select id="cocktailIngredient" class="liqour-selection browser-default">
             <option value="" disabled selected>Choose your Liquor</option>
             <option value="1">Vodka</option>
@@ -38,35 +38,35 @@
             
           </select>
         </div>
-        <a class="waves-effect waves-light btn">Submit</a>
+        <div class="submit-btn">
+        <button class="waves-effect waves-light btn">Submit</button>
+        </div>
+        <p>This is where the API generated cocktail recipe will display.</p>
       </div>
       <div class="col s12 m6">
         <div class="matchCocktailside">
-          <div class="row">
-            <h5>Find a Recipe to go with your cocktail!<br><br> Search for an Ingredient </h5>
+          <div>
+            <h5>Find a meal recipe to go with your cocktail</h5>
                 
-                  <input name="ingredientInput" 
+                  <input class=" search-space browser-default" name="ingredientInput" 
                   id="ingredientInput" 
                   type="text" 
                   autofocus="true" 
-                  placeholder="Enter an ingredient"/>
-                  <input type="submit" value="Click here to search for recipes" class="button waves-effect waves-red btn-medium scale-transition scale-in" />
-                  
-                
-              
-            
+                  placeholder="Enter a meal idea"/>
+                  <button type="submit" class="waves-effect waves-light btn">Submit</button>
+                  <!-- <input type="submit" value="Click here to search for recipes" class="button waves-effect waves-red btn-medium scale-transition scale-in" /> -->
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col s12 m6">
-        <p>This is where the API generated cocktail recipe will display.</p>
+        
       </div>
       <!-- Modal Trigger -->
-<div id="cocktailContainer">
+      <div id="cocktailContainer">
 
-</div>
+      </div>
 
       <div class="col s12 m6">
         <p>This is where the API generated food recipe will display.</p>
