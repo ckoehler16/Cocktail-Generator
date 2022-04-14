@@ -67,11 +67,11 @@ button.addEventListener("click", function () {
         }
       });
     }
-
+    ingredients.push(ingredientInput);
+    saveIngredient();
+    ingredientIdCounter++;
   });
-  ingredients.push(ingredientInput);
-  saveIngredient();
-  ingredientIdCounter++;
+
   // button.addEventListener("click", function (event) {
   //   var ingredientInput = ingredientInputEl.value.trim();
   //   fetch(
@@ -88,7 +88,7 @@ button.addEventListener("click", function () {
   //   );
 });
 
-// save ingredients to local storage
+// save ingredients function to local storage
 var saveIngredient = function () {
   localStorage.setItem("ingredients", JSON.stringify(ingredients));
 };
