@@ -67,6 +67,7 @@ button.addEventListener("click", function () {
         }
       });
     }
+    ingredientInput.id = ingredientIdCounter;
     ingredients.push(ingredientInput);
     saveIngredient();
     ingredientIdCounter++;
