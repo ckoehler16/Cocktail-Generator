@@ -113,7 +113,7 @@ button.addEventListener("click", function () {
           var recipes = data.results;
 
           // Initialize empty string for our html
-          var innerHtml = ``;
+          var innerHtml = `<ul>`;
 
           // We fetched 10 (size) recipes, loop through and grab inenr data
           recipes.forEach((recipe) => {
