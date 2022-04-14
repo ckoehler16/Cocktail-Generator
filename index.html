@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
-      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Syncopate|Caveat|Della Respira:400,400i,700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -23,11 +23,11 @@
     <header class="hero">
       <div class="image-and-name">
         <img class="brand-image" src="./assets/images/flute-fork.png" />
-        <h1 class="app-title">Flute<br />and<br />Fork</h1>
+        <h1 class="app-title"><span class="font-title">
+          Flute</span><br><span class="and">and</span><br><span class="font-title">Fork</span>
+        </h1>
 
-        <p>
-          Search for drink recipes. Choose one ingredient from the pulldown
-          menu.
+        <p class="text-center">Meal planning made simple!
         </p>
       </div>
     </header>
@@ -35,12 +35,12 @@
       <div class="row">
         <div class="col s12 m6">
           <div id="liquor" class="input-field col s12">
-            <h5>Get A Cocktail Recipe</h5>
+            <h5>Find a cocktail recipe</h5>
             <select
               id="cocktailIngredient"
               class="liqour-selection browser-default"
             >
-              <option value="" disabled selected>Choose your Liquor</option>
+              <option value="" disabled selected>Choose your liquor</option>
               <option value="Vodka">Vodka</option>
               <option value="Tequila">Tequila</option>
               <option value="Rum">Rum</option>
@@ -58,11 +58,10 @@
           <div class="matchCocktailside">
             <div class="row">
               <h5>
-                Find a Recipe to go with your cocktail!<br /><br />
-                Search for an Ingredient
+                Find a meal recipe to go with your cocktail
               </h5>
 
-              <input
+              <input class="search-space browser-default"
                 name="ingredientInput"
                 id="ingredientInput"
                 type="text"
