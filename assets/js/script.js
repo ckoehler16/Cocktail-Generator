@@ -100,7 +100,7 @@ button.addEventListener("click", function () {
       // Use Size param - amount of recipes
       // Use Tags param - recipe tag(s)
       "https://tasty.p.rapidapi.com/recipes/list?from=0&size=10&q=" +
-        ingredientInput,
+      ingredientInput,
       options
     ).then(function (response) {
       console.log(response);
