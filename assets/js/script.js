@@ -86,6 +86,7 @@ button.addEventListener("click", function () {
     recipeContainerEl.textContent = "Please enter a search term";
   } else {
     ingredients.push(ingredientInput);
+    ingredientInputEl.value = "";
     saveIngredient();
     var options = {
       method: "GET",
