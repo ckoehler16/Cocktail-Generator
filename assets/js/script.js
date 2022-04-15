@@ -83,10 +83,9 @@ liquorButton.addEventListener("click", function () {
 button.addEventListener("click", function () {
   var ingredientInput = ingredientInputEl.value.trim();
   if (ingredientInput == "") {
+    ingredientInputEl.value = "";
     recipeContainerEl.textContent = "Please enter a search term";
   } else {
-    ingredients.push(ingredientInput);
-    saveIngredient();
     var options = {
       method: "GET",
       headers: {
