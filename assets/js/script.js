@@ -15,6 +15,17 @@ var mealContainerEl = document.querySelector(".matchCocktailside");
 var toastContainer = document.querySelector("#toastContainer");
 var ingredientIdCounter = 0;
 var ingredients = [];
+
+// use this instead of var ingredients
+function getIngredientsFromStorage() {
+  var currentStorage = localStorage.getItem("ingredients");
+  if (!currentStorage) {
+    localStorage.setItem("ingredients", JSON.stringify([]));
+    return [];
+  }
+  return JSON.parse(localStorage.getItem("ingredients"));
+}
+
 toastContainer.style.display = "none";
 //   var ingredientInput = ingredientInputEl.value.trim();
 //   if (ingredientInput) {
@@ -140,30 +151,27 @@ button.addEventListener("click", function () {
         });
       }
       ingredientInput.id = ingredientIdCounter;
-      ingredients.push(ingredientInput);
-      saveIngredient();
+      // ingredients.push(ingredientInput);
+      saveIngredient(ingredientInput);
       ingredientIdCounter++;
     });
   }
 });
-// button.addEventListener("click", function (event) {
-//   var ingredientInput = ingredientInputEl.value.trim();
-//   fetch(
-//     fetch().then(function (response) {
-//       if (response.ok) {
-//         console.log(response);
-//         response.json().then(function (data) {
-//           console.log(data);
-//         });
-//       } else {
-//         alert("Sorry please enter a different ingredient");
-//       }
-//     })
-//   );
+var saveIngredient = function (ingredientInput) {
+  // var currentStorage = JSON.parse(localStorage.getItem("ingredients"));
 
-// save ingredients to local storage
-var saveIngredient = function () {
-  localStorage.setItem("ingredients", JSON.stringify(ingredients));
+  // if (currentStorage) {
+  //   console.log("if current currentStorage ", currentStorage);
+  //   console.log("if current ingredients ", ingredients);
+  //   var updatedList = currentStorage.concat(ingredients);
+  //   console.log("if current", updatedList);
+  //   localStorage.setItem("ingredients", JSON.stringify(updatedList));
+  // } else {
+  //   console.log("else current", ingredients);
+  // getIngredientsFromStorage();
+  console.log("djc", getIngredientsFromStorage());
+  var updatedList = getIngredientsFromStorage().concat(ingredientInput);
+  localStorage.setItem("ingredients", JSON.stringify(updatedList));
 };
 
 ingredientIdCounter++;
@@ -172,13 +180,14 @@ document
   .getElementById("showIngredients")
   .addEventListener("click", loadIngredients);
 function loadIngredients() {
-  ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
+  // ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
   // if (!ingredients) {
   //   // ingredients = {
   //   //   // ingredients: [],
   //   // };
 
-  ingredients.forEach(function (ingredients) {
+  // console.log("loadStorage ", ingredients);
+  getIngredientsFromStorage().forEach(function (ingredients) {
     //creating the html elements which will display the ingredients
     var liTag = document.createElement("li");
     liTag.textContent = ingredients;
