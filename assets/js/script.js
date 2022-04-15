@@ -167,4 +167,22 @@ var saveIngredient = function () {
 };
 
 ingredientIdCounter++;
-// getRecipe();
+
+document
+  .getElementById("showIngredients")
+  .addEventListener("click", loadIngredients);
+function loadIngredients() {
+  ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
+  // if (!ingredients) {
+  //   // ingredients = {
+  //   //   // ingredients: [],
+  //   // };
+
+  ingredients.forEach(function (ingredients) {
+    //creating the html elements which will display the ingredients
+    var liTag = document.createElement("li");
+    liTag.textContent = ingredients;
+    var ingredientList = document.getElementById("ingredients");
+    ingredientList.appendChild(liTag);
+  });
+}
