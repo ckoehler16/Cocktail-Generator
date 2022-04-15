@@ -1,6 +1,6 @@
 body {
   background-color: #00cfc9;
-  font-family: 'Della Respira';
+  font-family: "Della Respira";
 }
 
 .hero {
@@ -31,11 +31,11 @@ body {
   height: 112px;
 }
 .font-title {
-  font-family: 'Syncopate';
+  font-family: "Syncopate";
 }
 
 .and {
-  font-family: 'Caveat';
+  font-family: "Caveat";
 }
 
 .liquor-selection {
@@ -54,7 +54,7 @@ body {
   margin-bottom: 14px;
   margin-top: 16px;
   box-sizing: content-box;
-  transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+  transition: box-shadow 0.3s, border 0.3s, -webkit-box-shadow 0.3s;
   transition-property: box-shadow, border, -webkit-box-shadow;
   transition-duration: 0.3s, 0.3s, 0.3s;
   transition-timing-function: ease, ease, ease;
@@ -62,4 +62,18 @@ body {
 }
 ::placeholder {
   color: rgb(82, 81, 81);
- }
+}
+#toastContainer {
+  top: auto !important;
+  right: auto !important;
+  bottom: 10%;
+  left: 7%;
+}
+
+.toast {
+  font-size: 29px;
+  top: 350px !important;
+  /* right: 100px !important; */
+
+  left: -225px !important;
+}
