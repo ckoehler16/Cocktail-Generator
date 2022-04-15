@@ -1,5 +1,6 @@
 var ingredientInputEl = document.querySelector("#ingredientInput");
-var recipeContainerEl = document.querySelector("#ingredientContainer");
+var recipeContainerEl = document.querySelector("#recipeContainer");
+var test = document.getElementById("recipeContainer");
 var button = document.querySelector(".button");
 var ingredientInputForm = document.querySelector("#ingredientInput-form");
 var apiKey = "717fd2ea79msh05cd2674261c989p10bbf5jsnc8072009ac5c";
@@ -11,9 +12,10 @@ var liquorButton = document.querySelector(".button_2");
 var storedListEl = document.querySelector(".storedList");
 var storageBtnEl = document.querySelector(".storageBtn");
 var mealContainerEl = document.querySelector(".matchCocktailside");
-
+var toastContainer = document.querySelector("#toastContainer");
 var ingredientIdCounter = 0;
 var ingredients = [];
+toastContainer.style.display = "none";
 //   var ingredientInput = ingredientInputEl.value.trim();
 //   if (ingredientInput) {
 //     getRecipe(ingredientInput);
@@ -29,7 +31,7 @@ liquorButton.addEventListener("click", function () {
   var liquorInput = liquorInputEl.value.trim();
   console.log(liquorInput);
   if (liquorInput == "") {
-    recipeContainerEl.textContent = "Please enter a search term";
+    recipeContainerEl.innerHTML = "Please enter a search term";
   } else {
     const options = {
       method: "GET",
@@ -82,10 +84,16 @@ liquorButton.addEventListener("click", function () {
 
 button.addEventListener("click", function () {
   var ingredientInput = ingredientInputEl.value.trim();
+  toastContainer.style.display = "none";
   if (ingredientInput == "") {
     ingredientInputEl.value = "";
-    recipeContainerEl.textContent = "Please enter a search term";
+    test.style.display = "none";
+    toastContainer.style.display = "block";
+    toastContainer.innerHTML = M.toast({
+      html: "Please enter a search term",
+    });
   } else {
+    test.style.display = "block";
     var options = {
       method: "GET",
       headers: {
@@ -110,7 +118,12 @@ x      options
 
           // Store results as recipes
           var recipes = data.results;
-
+          if (recipes.length === 0) {
+            toastContainer.innerHTML = M.toast({
+              html: "Enter a different ingredient",
+            });
+            return;
+          }
           // Initialize empty string for our html
           var innerHtml = `<ul>`;
 
@@ -124,11 +137,6 @@ x      options
           innerHtml += "</ul>";
           var recipeLink = document.getElementById("recipeContainer");
           recipeLink.innerHTML = innerHtml;
-
-          if (recipes.length === 0) {
-            recipeContainerEl.textContent = "No recipes found.";
-            return;
-          }
         });
       }
       ingredientInput.id = ingredientIdCounter;
