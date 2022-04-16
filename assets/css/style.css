@@ -39,6 +39,7 @@ body {
 
 .input-field {
   margin-top: 0;
+  margin-bottom: 40px;
 }
 .liquor-selection {
   margin-bottom: 14px;
@@ -56,6 +57,10 @@ body {
 
 .find-meal {
   margin-left: 16px;
+}
+
+.matchCocktailside {
+  margin-bottom: 40px;
 }
 
 .search-space {
