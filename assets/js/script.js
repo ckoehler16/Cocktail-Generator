@@ -156,6 +156,7 @@ button.addEventListener("click", function () {
       ingredientIdCounter++;
     });
   }
+  ingredientInputEl.value = "";
 });
 var saveIngredient = function (ingredientInput) {
   // var currentStorage = JSON.parse(localStorage.getItem("ingredients"));
