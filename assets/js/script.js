@@ -119,7 +119,7 @@ button.addEventListener("click", function () {
       // Use Tags param - recipe tag(s)
       "https://tasty.p.rapidapi.com/recipes/list?from=0&size=10&q=" +
       ingredientInput,
-x      options
+      options
     ).then(function (response) {
       console.log(response);
       if (response.ok) {
