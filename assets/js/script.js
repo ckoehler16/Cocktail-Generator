@@ -78,7 +78,7 @@ liquorButton.addEventListener("click", function () {
             cocktailRecipes.forEach((cocktailRecipes, i) => {
               if (i < 10)
                 innerHtml += `<li>
-        <a class="waves-effect waves-light btn-large" href="http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailRecipes.strDrink}">${cocktailRecipes.strDrink}</a></li>
+        <a class="waves-effect waves-light btn-large" href="http://www.thecocktaildb.com/drink/${cocktailRecipes.idDrink}">${cocktailRecipes.strDrink}</a></li>
           `;
             });
             innerHtml += "</ul>";
