@@ -37,7 +37,12 @@ toastContainer.style.display = "none";
 //   }
 //   // function to fetch the recipe
 // };
-
+liquorInputEl.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("liqBtn").click();
+  }
+});
 liquorButton.addEventListener("click", function () {
   var liquorInput = liquorInputEl.value.trim();
   console.log(liquorInput);
@@ -92,7 +97,12 @@ liquorButton.addEventListener("click", function () {
     });
   }
 });
-
+ingredientInputEl.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("ingredientBtn").click();
+  }
+});
 button.addEventListener("click", function () {
   var ingredientInput = ingredientInputEl.value.trim();
   toastContainer.style.display = "none";
