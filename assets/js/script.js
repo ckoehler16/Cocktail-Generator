@@ -74,7 +74,7 @@ liquorButton.addEventListener("click", function () {
             // Initialize empty string for our html
             var innerHtml = `<ul>`;
 
-            // We fetched 10 (size) recipes, loop through and grab inenr data
+            // We fetched 10 (size) recipes, loop through and grab inner data
             cocktailRecipes.forEach((cocktailRecipes, i) => {
               if (i < 10)
                 innerHtml += `<li>
@@ -138,7 +138,7 @@ button.addEventListener("click", function () {
           // Initialize empty string for our html
           var innerHtml = `<ul>`;
 
-          // We fetched 10 (size) recipes, loop through and grab inenr data
+          // We fetched 10 (size) recipes, loop through and grab inner data
           recipes.forEach((recipe) => {
             innerHtml += `<li>
               <a class="waves-effect waves-light btn tooltipped-${recipe.slug}" data-position="bottom" href="https://tasty.co/recipe/${recipe.slug}">${recipe.name}</a>

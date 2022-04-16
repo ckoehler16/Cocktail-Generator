@@ -9,20 +9,15 @@ body {
 }
 
 .hero p {
-  /* color: #4d5750; */
-  font-size: 30px;
+  font-size: 40px;
   display: inline;
   padding-left: 50px;
 }
 
 .app-title {
   font-size: 3rem;
-  /* background-color: #ccdad1; */
-  /* color: #0c7a2a; */
   padding: 10px;
   display: inline-block;
-  /* border-radius: 3rem;
-   box-shadow: 6px 5px; */
   text-align: center;
 }
 
@@ -38,21 +33,28 @@ body {
   font-family: "Caveat";
 }
 
+.input-field {
+  margin-top: 0;
+}
 .liquor-selection {
   margin-bottom: 14px;
-  margin-top: 16px;
-  background-color: #b2f7f5;
+  margin-top: 25px;
+  background-color: rgba(255,255,255,0.9);
+  height: 3rem;
+  width: 90%;
+  font-size: 20px;
 }
 
 .search-space {
   height: 2.75rem;
   width: 90%;
-  background-color: #b2f7f5;
-  border: none;
+  background-color: rgba(255,255,255,0.9);
+  border: 1px solid #f2f2f2;
   outline: none;
-  font-size: 16px;
+  border-radius: 2px;
+  font-size: 20px;
   margin-bottom: 14px;
-  margin-top: 16px;
+  margin-top: 12px;
   box-sizing: content-box;
   transition: box-shadow 0.3s, border 0.3s, -webkit-box-shadow 0.3s;
   transition-property: box-shadow, border, -webkit-box-shadow;
