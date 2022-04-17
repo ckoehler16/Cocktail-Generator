@@ -51,9 +51,7 @@ liquorButton.addEventListener("click", function () {
   var liquorInput = liquorInputEl.value.trim();
   console.log(liquorInput);
   if (liquorInput == "") {
-    liquorToastContainer.innerHTML = M.toast({
-      html: "Please enter a search term",
-    });
+    cocktailContainerEl.innerHTML = "<h4>Please enter a search term</h4>";
   } else {
     const options = {
       method: "GET",
