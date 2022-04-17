@@ -176,17 +176,6 @@ button.addEventListener("click", function () {
   ingredientInputEl.value = "";
 });
 var saveIngredient = function (ingredientInput) {
-  // var currentStorage = JSON.parse(localStorage.getItem("ingredients"));
-
-  // if (currentStorage) {
-  //   console.log("if current currentStorage ", currentStorage);
-  //   console.log("if current ingredients ", ingredients);
-  //   var updatedList = currentStorage.concat(ingredients);
-  //   console.log("if current", updatedList);
-  //   localStorage.setItem("ingredients", JSON.stringify(updatedList));
-  // } else {
-  //   console.log("else current", ingredients);
-  // getIngredientsFromStorage();
   console.log("djc", getIngredientsFromStorage());
   var updatedList = getIngredientsFromStorage().concat(ingredientInput);
   localStorage.setItem("ingredients", JSON.stringify(updatedList));
@@ -198,14 +187,6 @@ document
   .getElementById("showIngredients")
   .addEventListener("click", loadIngredients);
 function loadIngredients() {
-  // ingredients = JSON.parse(localStorage.getItem("ingredients")) || [];
-  // if (!ingredients) {
-  //   // ingredients = {
-  //   //   // ingredients: [],
-  //   // };
-
-  // console.log("loadStorage ", ingredients);
-
   getIngredientsFromStorage().forEach(function (ingredients) {
     //creating the html elements which will display the ingredients
     var liTag = document.createElement("li");
