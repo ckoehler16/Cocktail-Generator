@@ -8,8 +8,8 @@ var cocktailContainerEl = document.querySelector("#cocktailContainer");
 var liquorInputEl = document.querySelector("#cocktailIngredient");
 var liquorInput = liquorInputEl.value.trim();
 var liquorButton = document.querySelector(".button_2");
+var clearBtn = document.querySelector("#clearIngredients");
 // variables for local storage
-var storedListEl = document.querySelector(".storedList");
 var storageBtnEl = document.querySelector(".storageBtn");
 var mealContainerEl = document.querySelector(".matchCocktailside");
 var toastContainer = document.querySelector("#toastContainer");
@@ -37,12 +37,15 @@ toastContainer.style.display = "none";
 //   }
 //   // function to fetch the recipe
 // };
+
+// function to trigger 'click' when user hits enter
 liquorInputEl.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     document.getElementById("liqBtn").click();
   }
 });
+
 liquorButton.addEventListener("click", function () {
   var liquorInput = liquorInputEl.value.trim();
   console.log(liquorInput);
@@ -97,12 +100,15 @@ liquorButton.addEventListener("click", function () {
     });
   }
 });
+
+// function to trigger 'click' when user hits enter
 ingredientInputEl.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     document.getElementById("ingredientBtn").click();
   }
 });
+
 button.addEventListener("click", function () {
   var ingredientInput = ingredientInputEl.value.trim();
   toastContainer.style.display = "none";
@@ -198,11 +204,16 @@ function loadIngredients() {
   //   // };
 
   // console.log("loadStorage ", ingredients);
+
   getIngredientsFromStorage().forEach(function (ingredients) {
     //creating the html elements which will display the ingredients
     var liTag = document.createElement("li");
     liTag.textContent = ingredients;
     var ingredientList = document.getElementById("ingredients");
     ingredientList.appendChild(liTag);
+    // when the clear button is click items are removed from the list
+    clearBtn.addEventListener("click", function () {
+      ingredientList.removeChild(liTag);
+    });
   });
 }
