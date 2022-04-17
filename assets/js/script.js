@@ -13,6 +13,7 @@ var clearBtn = document.querySelector("#clearIngredients");
 var storageBtnEl = document.querySelector(".storageBtn");
 var mealContainerEl = document.querySelector(".matchCocktailside");
 var toastContainer = document.querySelector("#toastContainer");
+var liquorToastContainer = document.querySelector("liquorToastContainer");
 var ingredientIdCounter = 0;
 var ingredients = [];
 
@@ -50,7 +51,9 @@ liquorButton.addEventListener("click", function () {
   var liquorInput = liquorInputEl.value.trim();
   console.log(liquorInput);
   if (liquorInput == "") {
-    cocktailContainerEl.innerHTML = "Please enter a search term";
+    liquorToastContainer.innerHTML = M.toast({
+      html: "Please enter a search term",
+    });
   } else {
     const options = {
       method: "GET",
