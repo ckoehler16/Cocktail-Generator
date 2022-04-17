@@ -28,16 +28,6 @@ function getIngredientsFromStorage() {
 }
 
 toastContainer.style.display = "none";
-//   var ingredientInput = ingredientInputEl.value.trim();
-//   if (ingredientInput) {
-//     getRecipe(ingredientInput);
-//     recipeContainerEl.textContent = "";
-//     ingredientInputEl.value = "";
-//   } else {
-//     alert("Please enter an ingredient");
-//   }
-//   // function to fetch the recipe
-// };
 
 // function to trigger 'click' when user hits enter
 liquorInputEl.addEventListener("keyup", function (event) {
