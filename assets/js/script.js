@@ -13,7 +13,7 @@ var clearBtn = document.querySelector("#clearIngredients");
 var storageBtnEl = document.querySelector(".storageBtn");
 var mealContainerEl = document.querySelector(".matchCocktailside");
 var toastContainer = document.querySelector("#toastContainer");
-var liquorToastContainer = document.querySelector("liquorToastContainer");
+var liquorToastContainer = document;
 var ingredientIdCounter = 0;
 var ingredients = [];
 
@@ -117,7 +117,7 @@ button.addEventListener("click", function () {
   toastContainer.style.display = "none";
   if (ingredientInput == "") {
     ingredientInputEl.value = "";
-    toastContainer.style.display = "none";
+    test.style.display = "none";
     // toastContainer.style.display = "block";
     toastContainer.innerHTML = M.toast({
       html: "Please enter a search term",
