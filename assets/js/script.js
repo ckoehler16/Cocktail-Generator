@@ -117,7 +117,7 @@ button.addEventListener("click", function () {
   toastContainer.style.display = "none";
   if (ingredientInput == "") {
     ingredientInputEl.value = "";
-    test.style.display = "none";
+    toastContainer.style.display = "none";
     // toastContainer.style.display = "block";
     toastContainer.innerHTML = M.toast({
       html: "Please enter a search term",
