@@ -1,11 +1,14 @@
 body {
+  /* background-image:linear-gradient(to bottom right, #fffed6, #00cfc9); */
+  /* background-image: linear-gradient(to bottom left, #00cfc9, #fffed6); */
   background-color: #00cfc9;
   font-family: "Della Respira";
 }
 
 .hero {
   padding: 0 4%;
-  background-color: #b2f7f5;
+  background-image: linear-gradient(to bottom right,#28e7e1, #fffed6);
+  border-bottom: solid #525353 5px;
 }
 
 .hero p {
