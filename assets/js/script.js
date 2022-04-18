@@ -17,7 +17,7 @@ var liquorToastContainer = document;
 var ingredientIdCounter = 0;
 var ingredients = [];
 
-// use this instead of var ingredients
+// makes empty array if nothing is in local storage
 function getIngredientsFromStorage() {
   var currentStorage = localStorage.getItem("ingredients");
   if (!currentStorage) {
@@ -50,19 +50,11 @@ liquorButton.addEventListener("click", function () {
         "X-RapidAPI-Key": "717fd2ea79msh05cd2674261c989p10bbf5jsnc8072009ac5c",
       },
     };
-    fetch(
-      // Fetch recipes from endpoint
-      // Use From param - start point
-      // Use Size param - amount of recipes
-      // Use Tags param - recipe tag(s)
-      "https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + liquorInput,
-      options
-    ).then(function (response) {
-      console.log(response);
+
+    // gets the recipes from the cocktailDB API and displays them on the page
+    fetch("https://the-cocktail-db.p.rapidapi.com/filter.php?i=" + liquorInput, options).then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          console.log(data);
-          // Returns result of recipes from /list endpoint
 
           // Store results as recipes
           var cocktailRecipes = data.drinks;
@@ -76,9 +68,7 @@ liquorButton.addEventListener("click", function () {
             // We fetched 10 (size) recipes, loop through and grab inner data
             cocktailRecipes.forEach((cocktailRecipes, i) => {
               if (i < 10)
-                innerHtml += `<li>
-        <a class="waves-effect waves-light btn-large" href="http://www.thecocktaildb.com/drink/${cocktailRecipes.idDrink}">${cocktailRecipes.strDrink}</a></li>
-          `;
+                innerHtml += `<li><a class="waves-effect waves-light btn-large" href="http://www.thecocktaildb.com/drink/${cocktailRecipes.idDrink}">${cocktailRecipes.strDrink}</a></li>`;
             });
             innerHtml += "</ul>";
             console.log(innerHtml);
@@ -106,7 +96,6 @@ button.addEventListener("click", function () {
   if (ingredientInput == "") {
     ingredientInputEl.value = "";
     test.style.display = "none";
-    // toastContainer.style.display = "block";
     toastContainer.innerHTML = M.toast({
       html: "Please enter a search term",
     });
@@ -119,20 +108,12 @@ button.addEventListener("click", function () {
         "X-RapidAPI-Key": "717fd2ea79msh05cd2674261c989p10bbf5jsnc8072009ac5c",
       },
     };
-    fetch(
-      // Fetch recipes from endpoint
-      // Use From param - start point
-      // Use Size param - amount of recipes
-      // Use Tags param - recipe tag(s)
-      "https://tasty.p.rapidapi.com/recipes/list?from=0&size=10&q=" +
-        ingredientInput,
-      options
-    ).then(function (response) {
-      console.log(response);
+
+    // // gets the recipes from the tasty API and displays them on the page
+    fetch("https://tasty.p.rapidapi.com/recipes/list?from=0&size=10&q=" + ingredientInput, options).then(function (response) {
+      
       if (response.ok) {
         response.json().then(function (data) {
-          console.log(data);
-          // Returns result of recipes from /list endpoint
 
           // Store results as recipes
           var recipes = data.results;
@@ -145,7 +126,7 @@ button.addEventListener("click", function () {
           // Initialize empty string for our html
           var innerHtml = `<ul>`;
 
-          // We fetched 10 (size) recipes, loop through and grab inner data
+          // fetched 10 (size) recipes, loop through and grab inner data
           recipes.forEach((recipe) => {
             innerHtml += `<li>
               <a class="waves-effect waves-light btn tooltipped-${recipe.slug}" data-position="bottom" href="https://tasty.co/recipe/${recipe.slug}">${recipe.name}</a>
@@ -158,21 +139,22 @@ button.addEventListener("click", function () {
         });
       }
       ingredientInput.id = ingredientIdCounter;
-      // ingredients.push(ingredientInput);
       saveIngredient(ingredientInput);
       ingredientIdCounter++;
     });
   }
   ingredientInputEl.value = "";
 });
+
+// saves previous searches to local storage
 var saveIngredient = function (ingredientInput) {
-  console.log("djc", getIngredientsFromStorage());
   var updatedList = getIngredientsFromStorage().concat(ingredientInput);
   localStorage.setItem("ingredients", JSON.stringify(updatedList));
 };
 
 ingredientIdCounter++;
 
+// displays previous searches that are in local storage
 document
   .getElementById("showIngredients")
   .addEventListener("click", loadIngredients);
